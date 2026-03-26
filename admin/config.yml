@@ -1,0 +1,172 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images"
+public_folder: "/images"
+
+collections:
+
+  - name: "about"
+    label: "About Page"
+    files:
+      - label: "About LWVRI"
+        name: "about"
+        file: "about.html"
+        fields:
+          - { label: "Page Title (browser tab)", name: "title", widget: "hidden", default: "About — League of Women Voters of Rhode Island" }
+          - label: "Page Header"
+            name: "page_header"
+            widget: "object"
+            fields:
+              - { label: "Headline", name: "headline", widget: "string", default: "Who We Are" }
+              - { label: "Subheadline", name: "subheadline", widget: "string", default: "A Century of Civic Empowerment" }
+          - label: "Mission Statement"
+            name: "mission"
+            widget: "text"
+            hint: "The paragraph text shown in the page header area"
+          - label: "Timeline Milestones"
+            name: "milestones"
+            widget: "list"
+            fields:
+              - { label: "Year", name: "year", widget: "string" }
+              - { label: "Title", name: "milestone_title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+          - label: "DEI Statement"
+            name: "dei_statement"
+            widget: "text"
+            hint: "The Diversity, Equity & Inclusion commitment text"
+
+  - name: "events"
+    label: "Events Page"
+    files:
+      - label: "Events & Programs"
+        name: "events"
+        file: "events.html"
+        fields:
+          - label: "Featured Upcoming Event"
+            name: "featured_event"
+            widget: "object"
+            fields:
+              - { label: "Event Title", name: "event_title", widget: "string" }
+              - { label: "Date & Time", name: "date_time", widget: "string", hint: "e.g. March 11, 2026 · 6:30–8:00 PM" }
+              - { label: "Location", name: "location", widget: "string" }
+              - { label: "Admission", name: "admission", widget: "string", default: "Free & Open to the Public" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Registration URL", name: "register_url", widget: "string", hint: "Full URL for the Register Here button" }
+              - label: "Highlights (bullet points)"
+                name: "highlights"
+                widget: "list"
+                field: { label: "Highlight", name: "highlight", widget: "string" }
+          - label: "More Upcoming Events"
+            name: "upcoming_events"
+            widget: "list"
+            fields:
+              - { label: "Title", name: "event_title", widget: "string" }
+              - { label: "Date & Time", name: "date_time", widget: "string" }
+              - { label: "Location", name: "location", widget: "string" }
+              - { label: "League / Host", name: "host", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Registration URL", name: "register_url", widget: "string", required: false }
+          - label: "Past Events"
+            name: "past_events"
+            widget: "list"
+            fields:
+              - { label: "Date / Period", name: "date_period", widget: "string", hint: "e.g. August 2025 · LWV South County" }
+              - { label: "Title", name: "past_event_title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+
+  - name: "issues"
+    label: "Issues Page"
+    files:
+      - label: "Issues We Champion"
+        name: "issues"
+        file: "issues.html"
+        fields:
+          - label: "Issues"
+            name: "issues_list"
+            widget: "list"
+            fields:
+              - { label: "Icon (emoji)", name: "icon", widget: "string", hint: "e.g. 🗳️" }
+              - { label: "Issue Title", name: "issue_title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Position URL", name: "position_url", widget: "string", hint: "Link to the full LWV position page" }
+
+  - name: "leagues"
+    label: "Leagues Page"
+    files:
+      - label: "Local Leagues"
+        name: "leagues"
+        file: "leagues.html"
+        fields:
+          - label: "Local Leagues"
+            name: "leagues_list"
+            widget: "list"
+            fields:
+              - { label: "League Name", name: "league_name", widget: "string" }
+              - { label: "Area Served", name: "area", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Website URL", name: "website_url", widget: "string", required: false }
+              - { label: "Contact Email", name: "contact_email", widget: "string", required: false }
+          - label: "Statewide Programs"
+            name: "programs"
+            widget: "list"
+            fields:
+              - { label: "Program Name", name: "program_name", widget: "string" }
+              - { label: "Icon (emoji)", name: "icon", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Meeting Details", name: "meeting_details", widget: "string", required: false }
+
+  - name: "contact"
+    label: "Contact Page"
+    files:
+      - label: "Contact Us"
+        name: "contact"
+        file: "contact.html"
+        fields:
+          - label: "Contact Information"
+            name: "contact_info"
+            widget: "object"
+            fields:
+              - { label: "Mailing Address", name: "address", widget: "text" }
+              - { label: "General Email", name: "general_email", widget: "string" }
+              - { label: "Observer Corps Email", name: "observer_email", widget: "string" }
+              - { label: "Membership Email", name: "membership_email", widget: "string", required: false }
+          - label: "Local League Links"
+            name: "local_league_links"
+            widget: "list"
+            fields:
+              - { label: "League Name", name: "league_name", widget: "string" }
+              - { label: "URL", name: "url", widget: "string" }
+
+  - name: "donate"
+    label: "Donate Page"
+    files:
+      - label: "Donate"
+        name: "donate"
+        file: "donate.html"
+        fields:
+          - label: "Page Header"
+            name: "page_header"
+            widget: "object"
+            fields:
+              - { label: "Headline", name: "headline", widget: "string", default: "Power Democracy in Rhode Island" }
+              - { label: "Subheadline", name: "subheadline", widget: "string", default: "Make a Donation" }
+          - label: "Donation Impact Items"
+            name: "impact_items"
+            widget: "list"
+            hint: "The 'Your Gift Makes an Impact' bullet points"
+            fields:
+              - { label: "Dollar Amount", name: "amount", widget: "string", hint: "e.g. $25" }
+              - { label: "What it funds", name: "impact_description", widget: "string" }
+          - label: "Other Ways to Give"
+            name: "ways_to_give"
+            widget: "list"
+            fields:
+              - { label: "Icon (emoji)", name: "icon", widget: "string" }
+              - { label: "Title", name: "give_title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+          - label: "Tax Information"
+            name: "tax_info"
+            widget: "text"
+            hint: "The tax deductibility disclaimer text"
