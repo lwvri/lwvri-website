@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Contact | LWV Rhode Island</title>
+<script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','GA_MEASUREMENT_ID');</script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900&family=Source+Sans+3:wght@300;400;500;600&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#0d2b4e; --navy2:#163d6e; --red:#c0182a; --gold:#e8a91f;
+  --cream:#fdf8f0; --gray:#f4f0ea; --text:#1a1a1a; --muted:#5a5a6a;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Source Sans 3',Georgia,sans-serif;color:var(--text);background:var(--cream);overflow-x:hidden}
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:999;background:var(--navy);height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;box-shadow:0 2px 20px rgba(0,0,0,.35)}
+.logo{font-family:'Playfair Display',Georgia,serif;font-size:1.1rem;font-weight:700;color:#fff;text-decoration:none;letter-spacing:.02em}
+.logo b{color:var(--gold)}
+.nav-links{display:flex;gap:18px;list-style:none;align-items:center}
+.nav-links a{color:rgba(255,255,255,.82);text-decoration:none;font-size:.82rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;transition:color .2s}
+.nav-links a:hover,.nav-links a.active{color:var(--gold)}
+.nav-btn{background:var(--red)!important;color:#fff!important;padding:6px 13px;border-radius:3px}
+.nav-btn:hover{background:#a0111f!important}
+.nav-donate{background:var(--gold)!important;color:var(--navy)!important;padding:6px 13px;border-radius:3px;font-weight:700!important}
+.nav-donate:hover{background:#c9920f!important}
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
+.hamburger span{display:block;width:24px;height:2px;background:#fff;border-radius:2px}
+.mob{display:none;position:fixed;top:64px;left:0;right:0;background:var(--navy);padding:20px 28px;flex-direction:column;gap:14px;z-index:998;border-top:1px solid rgba(255,255,255,.1);box-shadow:0 8px 24px rgba(0,0,0,.3)}
+.mob.open{display:flex}
+.mob a{color:rgba(255,255,255,.85);text-decoration:none;font-size:1rem;font-weight:500;padding:6px 0;border-bottom:1px solid rgba(255,255,255,.08)}
+.mob a:last-child{border:none}
+/* PAGE HEADER */
+.phdr{background:var(--navy);padding:116px 40px 60px;position:relative;overflow:hidden}
+.phdr::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 70% 50%,rgba(192,24,42,.14) 0%,transparent 60%)}
+.phdr-in{max-width:1100px;margin:0 auto;position:relative;z-index:1}
+.peye{font-size:.72rem;font-weight:600;color:var(--gold);letter-spacing:.18em;text-transform:uppercase;margin-bottom:10px}
+.phdr h1{font-family:'Playfair Display',Georgia,serif;font-size:clamp(2rem,4vw,3.1rem);font-weight:900;color:#fff;line-height:1.12;margin-bottom:14px}
+.phdr p{font-size:1.05rem;line-height:1.78;color:rgba(255,255,255,.68);max-width:580px}
+/* LAYOUT */
+section{padding:80px 40px}
+.wrap{max-width:1100px;margin:0 auto}
+.sec-hd{text-align:center;margin-bottom:52px}
+.seye{font-size:.72rem;font-weight:600;color:var(--red);letter-spacing:.18em;text-transform:uppercase;margin-bottom:10px}
+h2{font-family:'Playfair Display',Georgia,serif;font-size:clamp(1.8rem,3vw,2.5rem);font-weight:700;color:var(--navy);line-height:1.2}
+.sdesc{font-size:1rem;line-height:1.78;color:var(--muted);max-width:600px;margin:14px auto 0}
+.bar{width:52px;height:3px;background:var(--gold);margin:16px auto 0}
+/* BUTTONS */
+.btn{display:inline-block;padding:11px 24px;border-radius:3px;font-weight:600;font-size:.93rem;text-decoration:none;letter-spacing:.03em;cursor:pointer;border:none;transition:all .2s;font-family:inherit}
+.btn-r{background:var(--red);color:#fff}.btn-r:hover{background:#a0111f;transform:translateY(-1px)}
+.btn-g{background:var(--gold);color:var(--navy);font-weight:700}.btn-g:hover{background:#c9920f;transform:translateY(-1px)}
+.btn-gh{border:2px solid rgba(255,255,255,.35);color:#fff}.btn-gh:hover{border-color:var(--gold);background:rgba(232,169,31,.1)}
+.btn-o{border:2px solid var(--navy);color:var(--navy)}.btn-o:hover{background:var(--navy);color:#fff}
+/* STRIP */
+.strip{background:var(--red);padding:14px 40px;display:flex;justify-content:center;gap:40px;flex-wrap:wrap}
+.si{font-size:.78rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.9);display:flex;align-items:center;gap:6px}
+.si+.si::before{content:'◆';font-size:.45rem;color:rgba(255,255,255,.4)}
+/* GRIDS */
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.g2{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+/* ISSUE CARDS */
+.ic{background:#fff;border-radius:6px;padding:28px;border-top:4px solid var(--navy);transition:all .2s}
+.ic:hover{transform:translateY(-4px);box-shadow:0 14px 36px rgba(0,0,0,.1)}
+.ic:nth-child(3n+2){border-top-color:var(--red)}
+.ic:nth-child(3n){border-top-color:var(--gold)}
+.ic-ico{font-size:2rem;margin-bottom:14px}
+.ic-ttl{font-family:'Playfair Display',Georgia,serif;font-size:1.08rem;font-weight:700;color:var(--navy);margin-bottom:8px}
+.ic p{font-size:.88rem;line-height:1.72;color:var(--muted)}
+.ic-lnk{display:inline-block;margin-top:10px;font-size:.8rem;font-weight:600;color:var(--navy);text-decoration:none;border-bottom:2px solid var(--gold);padding-bottom:1px;transition:color .2s}
+.ic-lnk:hover{color:var(--red)}
+/* LEAGUE CARDS */
+.lc{border:2px solid var(--gray);border-radius:6px;padding:30px;transition:all .2s}
+.lc:hover{border-color:var(--navy);transform:translateY(-3px);box-shadow:0 10px 28px rgba(0,0,0,.08)}
+.lc-nm{font-family:'Playfair Display',Georgia,serif;font-size:1.25rem;font-weight:700;color:var(--navy);margin-bottom:4px}
+.lc-ar{font-size:.76rem;color:var(--red);font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px}
+.lc p{font-size:.9rem;line-height:1.75;color:var(--muted)}
+.lc-lnk{display:inline-block;margin-top:14px;font-size:.82rem;font-weight:600;color:var(--navy);text-decoration:none;border-bottom:2px solid var(--gold);padding-bottom:1px;transition:color .2s}
+.lc-lnk:hover{color:var(--red)}
+/* FORMS */
+.fg{margin-bottom:18px}
+.fg label{display:block;font-size:.84rem;font-weight:600;color:var(--navy);margin-bottom:5px;letter-spacing:.03em}
+.fg input,.fg select,.fg textarea{width:100%;padding:11px 14px;border:2px solid #ddd;border-radius:4px;font-family:inherit;font-size:.95rem;color:var(--text);background:#fff;outline:none;transition:border-color .2s}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--navy);box-shadow:0 0 0 3px rgba(13,43,78,.09)}
+.fg textarea{resize:vertical;min-height:120px}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+/* DEI */
+.dei{background:linear-gradient(135deg,var(--navy2),var(--navy));padding:68px 40px;text-align:center}
+.dei-ttl{font-family:'Playfair Display',Georgia,serif;font-size:1.7rem;font-weight:700;color:#fff;margin-bottom:16px}
+.dei-txt{font-size:1rem;line-height:1.85;color:rgba(255,255,255,.7);max-width:760px;margin:0 auto}
+.dei-txt strong{color:var(--gold)}
+/* FOOTER */
+footer{background:#070d18;padding:60px 40px 28px;color:rgba(255,255,255,.52)}
+.fg-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:44px;margin-bottom:44px}
+.fl{font-family:'Playfair Display',Georgia,serif;font-size:1.15rem;font-weight:700;color:#fff;margin-bottom:14px}
+.fl b{color:var(--gold)}
+.fd{font-size:.85rem;line-height:1.78;max-width:270px}
+.fa{font-size:.8rem;margin-top:14px;line-height:1.65}
+.fc h4{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+.fc ul{list-style:none}.fc li{margin-bottom:7px}
+.fc a{color:rgba(255,255,255,.48);text-decoration:none;font-size:.85rem;transition:color .2s}
+.fc a:hover{color:var(--gold)}
+.fbot{max-width:1100px;margin:0 auto;padding-top:24px;border-top:1px solid rgba(255,255,255,.07);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;font-size:.78rem}
+.fbot a{color:rgba(255,255,255,.45);text-decoration:none}.fbot a:hover{color:var(--gold)}
+/* RESPONSIVE */
+@media(max-width:960px){
+  nav{padding:0 20px}.nav-links{display:none}.hamburger{display:flex}
+  .g3,.g4{grid-template-columns:repeat(2,1fr)}
+  .fg-grid{grid-template-columns:1fr 1fr}
+  section{padding:56px 20px}
+  .phdr{padding:96px 20px 48px}
+  .strip{gap:16px;padding:12px 20px}
+}
+@media(max-width:580px){
+  .g3,.g2,.g4{grid-template-columns:1fr}
+  .fg-grid{grid-template-columns:1fr}
+  .frow{grid-template-columns:1fr}
+}
+
+.cgrid{display:grid;grid-template-columns:1.3fr 1fr;gap:60px;align-items:start}
+.fcard{background:#fff;border-radius:8px;padding:44px;box-shadow:0 4px 24px rgba(0,0,0,.07)}
+.fcard h2{font-family:'Playfair Display',Georgia,serif;font-size:1.7rem;font-weight:700;color:var(--navy);text-align:left;margin-bottom:8px}
+.fcard>p{font-size:.95rem;color:var(--muted);margin-bottom:28px;line-height:1.65}
+.fsub{width:100%;padding:13px;background:var(--red);color:#fff;border:none;border-radius:4px;font-family:inherit;font-size:1rem;font-weight:700;letter-spacing:.04em;cursor:pointer;transition:all .2s}
+.fsub:hover{background:#a0111f;transform:translateY(-1px)}
+.suc{display:none;background:#e6f4ea;border:2px solid #34a853;border-radius:6px;padding:20px;text-align:center;color:#1a5c2a;font-weight:600;margin-top:16px}
+.cside{display:flex;flex-direction:column;gap:20px}
+.icard{background:var(--navy);color:#fff;border-radius:8px;padding:32px}
+.icard h3{font-family:'Playfair Display',Georgia,serif;font-size:1.05rem;font-weight:700;color:var(--gold);margin-bottom:18px}
+.irow{display:flex;gap:12px;margin-bottom:14px;align-items:flex-start}
+.iico{font-size:1.1rem;margin-top:1px}
+.itxt{font-size:.88rem;line-height:1.65;color:rgba(255,255,255,.72)}
+.itxt strong{color:#fff;display:block}
+.itxt a{color:var(--gold);text-decoration:none}
+.jcard{background:var(--gold);border-radius:8px;padding:28px;text-align:center}
+.jcard h3{font-family:'Playfair Display',Georgia,serif;font-size:1.1rem;font-weight:700;color:var(--navy);margin-bottom:8px}
+.jcard p{font-size:.88rem;color:var(--navy);margin-bottom:16px;line-height:1.6}
+@media(max-width:900px){.cgrid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="logo">LWV <b>Rhode Island</b></a>
+  <ul class="nav-links">
+    <li><a href="issues.html">Issues</a></li>
+    <li><a href="leagues.html">Local Leagues</a></li>
+    <li><a href="events.html">Events</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html" class="active">Contact</a></li>
+    <li><a href="donate.html" class="nav-donate">❤ Donate</a></li>
+    <li><a href="https://my.lwv.org/rhode-island/voting-elections" target="_blank" class="nav-btn">Voting Info</a></li>
+  </ul>
+  <button class="hamburger" onclick="toggleMob()" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="mob" id="mob">
+  <a href="index.html" onclick="closeMob()">Home</a>
+  <a href="issues.html" onclick="closeMob()">Issues</a>
+  <a href="leagues.html" onclick="closeMob()">Local Leagues</a>
+  <a href="events.html" onclick="closeMob()">Events</a>
+  <a href="about.html" onclick="closeMob()">About</a>
+  <a href="contact.html" onclick="closeMob()">Contact</a>
+  <a href="donate.html" onclick="closeMob()" style="color:var(--gold);font-weight:700">❤ Donate</a>
+</div>
+
+<div class="phdr">
+  <div class="phdr-in">
+    <div class="peye">Get in Touch</div>
+    <h1>Contact Us</h1>
+    <p>Have a question, want to get involved, or interested in hosting a League event in your community? We'd love to hear from you.</p>
+  </div>
+</div>
+<section style="background:var(--cream)">
+  <div class="wrap">
+    <div class="cgrid">
+      <div class="fcard">
+        <h2>Send Us a Message</h2>
+        <p>Fill out the form below and a member of our team will get back to you. To make this form actually send emails, connect it to <a href="https://formspree.io" target="_blank" style="color:var(--navy);font-weight:600">Formspree.io</a> (free) by updating the form's action attribute.</p>
+        <form id="cf" onsubmit="submitCF(event)">
+          <div class="frow">
+            <div class="fg"><label>First Name *</label><input type="text" placeholder="Jane" required/></div>
+            <div class="fg"><label>Last Name *</label><input type="text" placeholder="Doe" required/></div>
+          </div>
+          <div class="fg"><label>Email Address *</label><input type="email" placeholder="jane@example.com" required/></div>
+          <div class="fg"><label>Phone (optional)</label><input type="tel" placeholder="(401) 555-0123"/></div>
+          <div class="fg"><label>Subject *</label>
+            <select required>
+              <option value="">— Select a topic —</option>
+              <option>Membership &amp; Joining</option><option>Events &amp; Programs</option>
+              <option>Volunteering</option><option>Advocacy &amp; Issues</option>
+              <option>Media &amp; Press</option><option>Donations</option>
+              <option>Voter Information</option><option>Other</option>
+            </select>
+          </div>
+          <div class="fg"><label>Which league interests you?</label>
+            <select>
+              <option value="">— Optional —</option>
+              <option>LWVRI (Statewide)</option><option>LWV Providence</option>
+              <option>LWV Newport County</option><option>LWV South County</option><option>Not sure yet</option>
+            </select>
+          </div>
+          <div class="fg"><label>Message *</label><textarea placeholder="Tell us how we can help..." required></textarea></div>
+          <div class="fg" style="display:flex;align-items:flex-start;gap:10px">
+            <input type="checkbox" style="width:auto;margin-top:3px"/>
+            <label style="font-weight:400;font-size:.88rem;color:var(--muted);margin:0">Yes, I'd like to receive LWVRI newsletters and action alerts.</label>
+          </div>
+          <button type="submit" class="fsub">Send Message →</button>
+        </form>
+        <div class="suc" id="csuc">✅ Thank you! Your message has been sent. We'll be in touch soon.</div>
+      </div>
+      <div class="cside">
+        <div class="icard">
+          <h3>Contact Information</h3>
+          <div class="irow"><span class="iico">📍</span><div class="itxt"><strong>Mailing Address</strong>One Richmond Square, Suite 220 A-W<br>Providence, RI 02906</div></div>
+          <div class="irow"><span class="iico">🌐</span><div class="itxt"><strong>Website</strong><a href="https://www.lwvri.org" target="_blank">www.lwvri.org</a></div></div>
+          <div class="irow"><span class="iico">🔗</span><div class="itxt"><strong>Member Portal</strong><a href="https://my.lwv.org/rhode-island" target="_blank">my.lwv.org/rhode-island</a></div></div>
+          <div class="irow"><span class="iico">📣</span><div class="itxt"><strong>Action Alerts</strong><a href="https://my.lwv.org/rhode-island/action-alerts" target="_blank">Sign up here</a></div></div>
+          <div class="irow"><span class="iico">🔍</span><div class="itxt"><strong>Observer Corps</strong><a href="mailto:emhead603@hotmail.com">emhead603@hotmail.com</a></div></div>
+        </div>
+        <div class="jcard">
+          <h3>Ready to Join?</h3>
+          <p>Become a member and add your voice to over 100 years of civic empowerment in Rhode Island.</p>
+          <a href="https://my.lwv.org/rhode-island/membership" target="_blank" class="btn btn-r" style="display:block;text-align:center">Join the League</a>
+        </div>
+        <div style="background:var(--gray);border-radius:8px;padding:24px">
+          <h3 style="font-family:'Playfair Display',Georgia,serif;font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:8px">Local League Links</h3>
+          <p style="font-size:.87rem;color:var(--muted);margin-bottom:12px;line-height:1.6">Connect directly with a local league:</p>
+          <ul style="list-style:none;font-size:.87rem;line-height:1.8">
+            <li><a href="leagues.html#providence" style="color:var(--navy);font-weight:600;text-decoration:none">→ LWV Providence</a></li>
+            <li><a href="leagues.html#newport" style="color:var(--navy);font-weight:600;text-decoration:none">→ LWV Newport County</a></li>
+            <li><a href="leagues.html#southcounty" style="color:var(--navy);font-weight:600;text-decoration:none">→ LWV South County</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+function submitCF(e){
+  e.preventDefault();
+  if(typeof gtag!=='undefined')gtag('event','form_submit',{event_category:'Contact'});
+  document.getElementById('cf').style.display='none';
+  document.getElementById('csuc').style.display='block';
+}
+</script>
+
+<footer>
+  <div class="fg-grid">
+    <div>
+      <div class="fl">League of Women Voters <b>Rhode Island</b></div>
+      <p class="fd">A nonpartisan, grassroots organization empowering voters and defending democracy across Rhode Island for over 100 years.</p>
+      <p class="fa">One Richmond Square, Suite 220 A-W<br>Providence, RI 02906<br>www.lwvri.org</p>
+    </div>
+    <div class="fc"><h4>Issues</h4><ul>
+      <li><a href="issues.html">Voting Rights</a></li><li><a href="issues.html">Environment</a></li>
+      <li><a href="issues.html">Civics Education</a></li><li><a href="issues.html">Gun Safety</a></li>
+      <li><a href="issues.html">Women's Health</a></li><li><a href="issues.html">View All →</a></li>
+    </ul></div>
+    <div class="fc"><h4>Leagues</h4><ul>
+      <li><a href="leagues.html">LWV Providence</a></li><li><a href="leagues.html">LWV Newport County</a></li>
+      <li><a href="leagues.html">LWV South County</a></li><li><a href="leagues.html">Book Club</a></li>
+      <li><a href="leagues.html">Observer Corps</a></li>
+    </ul></div>
+    <div class="fc"><h4>Organization</h4><ul>
+      <li><a href="about.html">About LWVRI</a></li><li><a href="about.html">Suffrage History</a></li>
+      <li><a href="events.html">Events</a></li><li><a href="contact.html">Contact Us</a></li>
+      <li><a href="donate.html">Donate</a></li>
+      <li><a href="https://my.lwv.org/rhode-island/membership" target="_blank">Join the League</a></li>
+    </ul></div>
+  </div>
+  <div class="fbot">
+    <span>© 2026 League of Women Voters of Rhode Island. All rights reserved.</span>
+    <span><a href="https://www.lwv.org" target="_blank">National LWV</a> · <a href="https://my.lwv.org/rhode-island" target="_blank">Member Portal</a></span>
+  </div>
+</footer>
+<script>
+function toggleMob(){document.getElementById('mob').classList.toggle('open')}
+function closeMob(){document.getElementById('mob').classList.remove('open')}
+document.addEventListener('click',function(e){
+  var m=document.getElementById('mob'),h=document.querySelector('.hamburger');
+  if(m&&h&&!m.contains(e.target)&&!h.contains(e.target))m.classList.remove('open');
+});
+</script>
+</body></html>

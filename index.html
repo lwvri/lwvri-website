@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>League of Women Voters of Rhode Island</title>
+<script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','GA_MEASUREMENT_ID');</script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900&family=Source+Sans+3:wght@300;400;500;600&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#0d2b4e; --navy2:#163d6e; --red:#c0182a; --gold:#e8a91f;
+  --cream:#fdf8f0; --gray:#f4f0ea; --text:#1a1a1a; --muted:#5a5a6a;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Source Sans 3',Georgia,sans-serif;color:var(--text);background:var(--cream);overflow-x:hidden}
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:999;background:var(--navy);height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;box-shadow:0 2px 20px rgba(0,0,0,.35)}
+.logo{font-family:'Playfair Display',Georgia,serif;font-size:1.1rem;font-weight:700;color:#fff;text-decoration:none;letter-spacing:.02em}
+.logo b{color:var(--gold)}
+.nav-links{display:flex;gap:18px;list-style:none;align-items:center}
+.nav-links a{color:rgba(255,255,255,.82);text-decoration:none;font-size:.82rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;transition:color .2s}
+.nav-links a:hover,.nav-links a.active{color:var(--gold)}
+.nav-btn{background:var(--red)!important;color:#fff!important;padding:6px 13px;border-radius:3px}
+.nav-btn:hover{background:#a0111f!important}
+.nav-donate{background:var(--gold)!important;color:var(--navy)!important;padding:6px 13px;border-radius:3px;font-weight:700!important}
+.nav-donate:hover{background:#c9920f!important}
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
+.hamburger span{display:block;width:24px;height:2px;background:#fff;border-radius:2px}
+.mob{display:none;position:fixed;top:64px;left:0;right:0;background:var(--navy);padding:20px 28px;flex-direction:column;gap:14px;z-index:998;border-top:1px solid rgba(255,255,255,.1);box-shadow:0 8px 24px rgba(0,0,0,.3)}
+.mob.open{display:flex}
+.mob a{color:rgba(255,255,255,.85);text-decoration:none;font-size:1rem;font-weight:500;padding:6px 0;border-bottom:1px solid rgba(255,255,255,.08)}
+.mob a:last-child{border:none}
+/* PAGE HEADER */
+.phdr{background:var(--navy);padding:116px 40px 60px;position:relative;overflow:hidden}
+.phdr::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 70% 50%,rgba(192,24,42,.14) 0%,transparent 60%)}
+.phdr-in{max-width:1100px;margin:0 auto;position:relative;z-index:1}
+.peye{font-size:.72rem;font-weight:600;color:var(--gold);letter-spacing:.18em;text-transform:uppercase;margin-bottom:10px}
+.phdr h1{font-family:'Playfair Display',Georgia,serif;font-size:clamp(2rem,4vw,3.1rem);font-weight:900;color:#fff;line-height:1.12;margin-bottom:14px}
+.phdr p{font-size:1.05rem;line-height:1.78;color:rgba(255,255,255,.68);max-width:580px}
+/* LAYOUT */
+section{padding:80px 40px}
+.wrap{max-width:1100px;margin:0 auto}
+.sec-hd{text-align:center;margin-bottom:52px}
+.seye{font-size:.72rem;font-weight:600;color:var(--red);letter-spacing:.18em;text-transform:uppercase;margin-bottom:10px}
+h2{font-family:'Playfair Display',Georgia,serif;font-size:clamp(1.8rem,3vw,2.5rem);font-weight:700;color:var(--navy);line-height:1.2}
+.sdesc{font-size:1rem;line-height:1.78;color:var(--muted);max-width:600px;margin:14px auto 0}
+.bar{width:52px;height:3px;background:var(--gold);margin:16px auto 0}
+/* BUTTONS */
+.btn{display:inline-block;padding:11px 24px;border-radius:3px;font-weight:600;font-size:.93rem;text-decoration:none;letter-spacing:.03em;cursor:pointer;border:none;transition:all .2s;font-family:inherit}
+.btn-r{background:var(--red);color:#fff}.btn-r:hover{background:#a0111f;transform:translateY(-1px)}
+.btn-g{background:var(--gold);color:var(--navy);font-weight:700}.btn-g:hover{background:#c9920f;transform:translateY(-1px)}
+.btn-gh{border:2px solid rgba(255,255,255,.35);color:#fff}.btn-gh:hover{border-color:var(--gold);background:rgba(232,169,31,.1)}
+.btn-o{border:2px solid var(--navy);color:var(--navy)}.btn-o:hover{background:var(--navy);color:#fff}
+/* STRIP */
+.strip{background:var(--red);padding:14px 40px;display:flex;justify-content:center;gap:40px;flex-wrap:wrap}
+.si{font-size:.78rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.9);display:flex;align-items:center;gap:6px}
+.si+.si::before{content:'◆';font-size:.45rem;color:rgba(255,255,255,.4)}
+/* GRIDS */
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.g2{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+/* ISSUE CARDS */
+.ic{background:#fff;border-radius:6px;padding:28px;border-top:4px solid var(--navy);transition:all .2s}
+.ic:hover{transform:translateY(-4px);box-shadow:0 14px 36px rgba(0,0,0,.1)}
+.ic:nth-child(3n+2){border-top-color:var(--red)}
+.ic:nth-child(3n){border-top-color:var(--gold)}
+.ic-ico{font-size:2rem;margin-bottom:14px}
+.ic-ttl{font-family:'Playfair Display',Georgia,serif;font-size:1.08rem;font-weight:700;color:var(--navy);margin-bottom:8px}
+.ic p{font-size:.88rem;line-height:1.72;color:var(--muted)}
+.ic-lnk{display:inline-block;margin-top:10px;font-size:.8rem;font-weight:600;color:var(--navy);text-decoration:none;border-bottom:2px solid var(--gold);padding-bottom:1px;transition:color .2s}
+.ic-lnk:hover{color:var(--red)}
+/* LEAGUE CARDS */
+.lc{border:2px solid var(--gray);border-radius:6px;padding:30px;transition:all .2s}
+.lc:hover{border-color:var(--navy);transform:translateY(-3px);box-shadow:0 10px 28px rgba(0,0,0,.08)}
+.lc-nm{font-family:'Playfair Display',Georgia,serif;font-size:1.25rem;font-weight:700;color:var(--navy);margin-bottom:4px}
+.lc-ar{font-size:.76rem;color:var(--red);font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px}
+.lc p{font-size:.9rem;line-height:1.75;color:var(--muted)}
+.lc-lnk{display:inline-block;margin-top:14px;font-size:.82rem;font-weight:600;color:var(--navy);text-decoration:none;border-bottom:2px solid var(--gold);padding-bottom:1px;transition:color .2s}
+.lc-lnk:hover{color:var(--red)}
+/* FORMS */
+.fg{margin-bottom:18px}
+.fg label{display:block;font-size:.84rem;font-weight:600;color:var(--navy);margin-bottom:5px;letter-spacing:.03em}
+.fg input,.fg select,.fg textarea{width:100%;padding:11px 14px;border:2px solid #ddd;border-radius:4px;font-family:inherit;font-size:.95rem;color:var(--text);background:#fff;outline:none;transition:border-color .2s}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--navy);box-shadow:0 0 0 3px rgba(13,43,78,.09)}
+.fg textarea{resize:vertical;min-height:120px}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+/* DEI */
+.dei{background:linear-gradient(135deg,var(--navy2),var(--navy));padding:68px 40px;text-align:center}
+.dei-ttl{font-family:'Playfair Display',Georgia,serif;font-size:1.7rem;font-weight:700;color:#fff;margin-bottom:16px}
+.dei-txt{font-size:1rem;line-height:1.85;color:rgba(255,255,255,.7);max-width:760px;margin:0 auto}
+.dei-txt strong{color:var(--gold)}
+/* FOOTER */
+footer{background:#070d18;padding:60px 40px 28px;color:rgba(255,255,255,.52)}
+.fg-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:44px;margin-bottom:44px}
+.fl{font-family:'Playfair Display',Georgia,serif;font-size:1.15rem;font-weight:700;color:#fff;margin-bottom:14px}
+.fl b{color:var(--gold)}
+.fd{font-size:.85rem;line-height:1.78;max-width:270px}
+.fa{font-size:.8rem;margin-top:14px;line-height:1.65}
+.fc h4{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+.fc ul{list-style:none}.fc li{margin-bottom:7px}
+.fc a{color:rgba(255,255,255,.48);text-decoration:none;font-size:.85rem;transition:color .2s}
+.fc a:hover{color:var(--gold)}
+.fbot{max-width:1100px;margin:0 auto;padding-top:24px;border-top:1px solid rgba(255,255,255,.07);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;font-size:.78rem}
+.fbot a{color:rgba(255,255,255,.45);text-decoration:none}.fbot a:hover{color:var(--gold)}
+/* RESPONSIVE */
+@media(max-width:960px){
+  nav{padding:0 20px}.nav-links{display:none}.hamburger{display:flex}
+  .g3,.g4{grid-template-columns:repeat(2,1fr)}
+  .fg-grid{grid-template-columns:1fr 1fr}
+  section{padding:56px 20px}
+  .phdr{padding:96px 20px 48px}
+  .strip{gap:16px;padding:12px 20px}
+}
+@media(max-width:580px){
+  .g3,.g2,.g4{grid-template-columns:1fr}
+  .fg-grid{grid-template-columns:1fr}
+  .frow{grid-template-columns:1fr}
+}
+
+.hero{min-height:100vh;background:var(--navy);display:flex;align-items:center;padding-top:64px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 70% 40%,rgba(192,24,42,.18) 0%,transparent 60%),radial-gradient(ellipse at 10% 80%,rgba(232,169,31,.09) 0%,transparent 50%)}
+.hstar{position:absolute;right:4%;top:50%;transform:translateY(-50%);font-size:28rem;line-height:1;color:rgba(255,255,255,.04);pointer-events:none;font-family:Georgia,serif;user-select:none}
+.hin{position:relative;z-index:2;max-width:1100px;margin:0 auto;padding:80px 40px;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;width:100%}
+.eyebrow{font-size:.72rem;font-weight:600;color:var(--gold);letter-spacing:.18em;text-transform:uppercase;margin-bottom:14px;display:flex;align-items:center;gap:10px}
+.eyebrow::before{content:'';width:28px;height:2px;background:var(--gold);flex-shrink:0}
+h1{font-family:'Playfair Display',Georgia,serif;font-size:clamp(2.1rem,3.8vw,3.4rem);font-weight:900;color:#fff;line-height:1.1;margin-bottom:20px}
+h1 em{font-style:normal;color:var(--red);display:block}
+.hdesc{font-size:1.05rem;line-height:1.8;color:rgba(255,255,255,.7);margin-bottom:28px;max-width:480px}
+.hbtns{display:flex;gap:12px;flex-wrap:wrap}
+.stats{display:flex;flex-direction:column;gap:20px}
+.stat{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-left:4px solid var(--gold);padding:22px 28px;border-radius:4px;transition:all .2s}
+.stat:hover{background:rgba(255,255,255,.11);transform:translateX(5px)}
+.snum{font-family:'Playfair Display',Georgia,serif;font-size:2.2rem;font-weight:700;color:var(--gold);display:block}
+.slbl{font-size:.85rem;color:rgba(255,255,255,.62);margin-top:3px}
+.mission-sec{background:#fff}
+.mgrid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.mt h2{text-align:left;margin-bottom:20px}
+.mt p{font-size:1rem;line-height:1.85;color:var(--muted);margin-bottom:16px}
+.mt strong{color:var(--navy)}
+.pull{background:var(--navy);border-radius:8px;padding:44px;color:#fff;position:relative;overflow:hidden}
+.pull::after{content:'"';position:absolute;bottom:-30px;right:16px;font-family:'Playfair Display',Georgia,serif;font-size:16rem;line-height:1;color:rgba(255,255,255,.05);pointer-events:none}
+.pull blockquote{font-family:'Playfair Display',Georgia,serif;font-size:1.3rem;font-weight:600;line-height:1.6;margin-bottom:20px;position:relative;z-index:1}
+.pull cite{font-size:.84rem;color:var(--gold);font-weight:600;font-style:normal;position:relative;z-index:1}
+.ev-sec{background:var(--navy);padding:80px 40px}
+.ew{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1.4fr;gap:60px;align-items:center}
+.elbl{font-size:.72rem;font-weight:600;color:var(--gold);letter-spacing:.18em;text-transform:uppercase;margin-bottom:14px}
+.ettl{font-family:'Playfair Display',Georgia,serif;font-size:1.9rem;font-weight:700;color:#fff;line-height:1.3;margin-bottom:18px}
+.emeta{display:flex;flex-direction:column;gap:7px;margin-bottom:18px}
+.emr{display:flex;align-items:center;gap:10px;font-size:.88rem;color:rgba(255,255,255,.62)}
+.emr span:first-child{color:var(--gold)}
+.ebody{font-size:.95rem;line-height:1.8;color:rgba(255,255,255,.65);margin-bottom:24px}
+.ebtns{display:flex;gap:12px;flex-wrap:wrap}
+.hls{display:flex;flex-direction:column;gap:10px}
+.hl{display:flex;align-items:flex-start;gap:12px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:4px;padding:14px 18px}
+.hli{color:var(--gold);font-size:.95rem;margin-top:2px;flex-shrink:0}
+.hlt{font-size:.9rem;color:rgba(255,255,255,.72);line-height:1.5}
+.inv-sec{background:var(--cream)}
+.inv{background:#fff;border-radius:6px;padding:28px;text-align:center;border-bottom:4px solid transparent;transition:all .2s}
+.inv:hover{border-bottom-color:var(--red);transform:translateY(-4px);box-shadow:0 12px 30px rgba(0,0,0,.08)}
+.iico{font-size:2.2rem;margin-bottom:14px}
+.ittl{font-family:'Playfair Display',Georgia,serif;font-size:1.05rem;font-weight:700;color:var(--navy);margin-bottom:8px}
+.inv p{font-size:.86rem;line-height:1.68;color:var(--muted)}
+@keyframes up{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+.eyebrow{animation:up .6s ease both}
+h1{animation:up .6s .15s ease both}
+.hdesc{animation:up .6s .28s ease both}
+.hbtns{animation:up .6s .4s ease both}
+.stat:nth-child(1){animation:up .6s .3s ease both}
+.stat:nth-child(2){animation:up .6s .45s ease both}
+.stat:nth-child(3){animation:up .6s .6s ease both}
+@media(max-width:960px){.hin,.mgrid,.ew{grid-template-columns:1fr;gap:36px}.ev-sec{padding:56px 20px}.hin{padding:60px 20px}}
+@media(max-width:580px){.hin{padding:48px 20px}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="logo">LWV <b>Rhode Island</b></a>
+  <ul class="nav-links">
+    <li><a href="issues.html">Issues</a></li>
+    <li><a href="leagues.html">Local Leagues</a></li>
+    <li><a href="events.html">Events</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="donate.html" class="nav-donate">❤ Donate</a></li>
+    <li><a href="https://my.lwv.org/rhode-island/voting-elections" target="_blank" class="nav-btn">Voting Info</a></li>
+  </ul>
+  <button class="hamburger" onclick="toggleMob()" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="mob" id="mob">
+  <a href="index.html" onclick="closeMob()">Home</a>
+  <a href="issues.html" onclick="closeMob()">Issues</a>
+  <a href="leagues.html" onclick="closeMob()">Local Leagues</a>
+  <a href="events.html" onclick="closeMob()">Events</a>
+  <a href="about.html" onclick="closeMob()">About</a>
+  <a href="contact.html" onclick="closeMob()">Contact</a>
+  <a href="donate.html" onclick="closeMob()" style="color:var(--gold);font-weight:700">❤ Donate</a>
+</div>
+
+<section class="hero">
+  <div class="hstar">★</div>
+  <div class="hin">
+    <div>
+      <div class="eyebrow">League of Women Voters of Rhode Island</div>
+      <h1>Empowering Voters.<em>Defending Democracy.</em></h1>
+      <p class="hdesc">A nonpartisan, grassroots organization dedicated to ensuring every Rhode Islander can participate fully in the democratic process — for over 100 years.</p>
+      <div class="hbtns">
+        <a href="https://my.lwv.org/rhode-island/membership" target="_blank" class="btn btn-r">Join the League</a>
+        <a href="donate.html" class="btn btn-g">❤ Donate</a>
+        <a href="https://my.lwv.org/rhode-island/voting-elections" target="_blank" class="btn btn-gh">Voting Info</a>
+      </div>
+    </div>
+    <div class="stats">
+      <div class="stat"><span class="snum">100+</span><div class="slbl">Years Empowering Rhode Island Voters</div></div>
+      <div class="stat"><span class="snum">3</span><div class="slbl">Active Local Leagues Across the State</div></div>
+      <div class="stat"><span class="snum">9</span><div class="slbl">Key Issue Areas We Advocate For</div></div>
+    </div>
+  </div>
+</section>
+<div class="strip">
+  <div class="si">Nonpartisan</div><div class="si">Voter Education</div>
+  <div class="si">Civic Advocacy</div><div class="si">Democracy Defense</div><div class="si">Since 1919</div>
+</div>
+<section class="mission-sec">
+  <div class="wrap">
+    <div class="mgrid">
+      <div class="mt">
+        <div class="seye">Our Mission</div>
+        <h2>Built on Over a Century of Civic Service</h2>
+        <p>The League of Women Voters of Rhode Island is a <strong>nonpartisan, grassroots organization</strong> dedicated to empowering voters and defending democracy. Through education, advocacy, and civic engagement, LWVRI works to ensure that every Rhode Islander can participate fully in the democratic process.</p>
+        <p>LWVRI is committed to building and sustaining a culture where <strong>diversity, equity, inclusion, access, and belonging</strong> are not just principles, but lived practices. We honor and value the richness of our community and our members.</p>
+        <p>The Providence League was chartered in 1919, shortly after the LWV was created at the NAWSA convention in St. Louis. Rhode Island played a nationally significant role in the suffrage movement through Paulina Wright Davis, Elizabeth Buffum Chace, and Julia Ward Howe.</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:20px">
+          <a href="about.html" class="btn btn-r">Learn Our History</a>
+          <a href="donate.html" class="btn btn-g">Support Our Work</a>
+        </div>
+      </div>
+      <div class="pull">
+        <blockquote>"The League is an organization that respects and values the richness of our community and our members."</blockquote>
+        <cite>— LWVUS Diversity, Equity &amp; Inclusion Policy</cite>
+      </div>
+    </div>
+  </div>
+</section>
+<section style="background:var(--gray)">
+  <div class="wrap">
+    <div class="sec-hd">
+      <div class="seye">Advocacy &amp; Positions</div>
+      <h2>Issues We Champion</h2>
+      <div class="bar"></div>
+      <p class="sdesc">LWVRI takes positions and advocates on key issues affecting democracy, civil rights, and quality of life in Rhode Island.</p>
+    </div>
+    <div class="g3">
+      <div class="ic"><div class="ic-ico">🗳️</div><div class="ic-ttl">Voting Rights</div><p>Protecting and expanding ballot access for all eligible voters, opposing restrictive measures, and promoting fair election administration.</p><a href="issues.html" class="ic-lnk">Learn More →</a></div>
+      <div class="ic"><div class="ic-ico">🌿</div><div class="ic-ttl">Environment &amp; Climate</div><p>Advocating for strong environmental protections and supporting climate action at state and federal levels, including clean water rules.</p><a href="issues.html" class="ic-lnk">Learn More →</a></div>
+      <div class="ic"><div class="ic-ico">🏫</div><div class="ic-ttl">Civics Education</div><p>Supporting students' right to a civics education. LWVRI filed an amicus brief in Cook v. McKee linking civics to voter participation.</p><a href="issues.html" class="ic-lnk">Learn More →</a></div>
+      <div class="ic"><div class="ic-ico">📚</div><div class="ic-ttl">Library Funding</div><p>Pursuing improved funding for public libraries as essential community resources and pillars of informed citizenship.</p><a href="issues.html" class="ic-lnk">Learn More →</a></div>
+      <div class="ic"><div class="ic-ico">🔍</div><div class="ic-ttl">Open Government</div><p>Monitoring transparency through our Observer Corps, tracking legislative proceedings and holding officials accountable.</p><a href="issues.html" class="ic-lnk">Learn More →</a></div>
+      <div class="ic"><div class="ic-ico">👩‍⚕️</div><div class="ic-ttl">Women's Health</div><p>Defending reproductive rights and women's healthcare access, including community advocacy actions around women's bodily autonomy.</p><a href="issues.html" class="ic-lnk">Learn More →</a></div>
+    </div>
+    <div style="text-align:center;margin-top:36px"><a href="issues.html" class="btn btn-o">View All 9 Issues →</a></div>
+  </div>
+</section>
+<section style="background:#fff">
+  <div class="wrap">
+    <div class="sec-hd">
+      <div class="seye">Local Leagues</div>
+      <h2>Serving Communities Statewide</h2>
+      <div class="bar"></div>
+      <p class="sdesc">Rhode Island is a small state and League activities are open to all members regardless of local league affiliation.</p>
+    </div>
+    <div class="g3">
+      <div class="lc"><div class="lc-nm">LWV Providence</div><div class="lc-ar">Providence &amp; Surrounding Area</div><p>One of the oldest leagues in the country, chartered in 1919. Hosts the Conversation Series, Lippitt House Discussions, advocates for library funding, and maintains an Observer Corps.</p><a href="leagues.html" class="lc-lnk">Learn More →</a></div>
+      <div class="lc"><div class="lc-nm">LWV Newport County</div><div class="lc-ar">Newport County</div><p>Civic engagement for Newport County residents including democracy vigils, voter education events, and advocacy on state and local issues.</p><a href="leagues.html" class="lc-lnk">Learn More →</a></div>
+      <div class="lc"><div class="lc-nm">LWV South County</div><div class="lc-ar">10 Towns — Charlestown to Westerly</div><p>Known for candidate forums, voter registration drives, the annual Susan B. Wilson Civic Merit Awards, and community programming.</p><a href="leagues.html" class="lc-lnk">Learn More →</a></div>
+    </div>
+  </div>
+</section>
+<section class="ev-sec">
+  <div class="ew">
+    <div>
+      <div class="elbl">Featured Upcoming Event</div>
+      <div class="ettl">Citizen Series: Voting in Rhode Island</div>
+      <div class="emeta">
+        <div class="emr"><span>📅</span><span>March 11, 2026 · 6:30–8:00 PM</span></div>
+        <div class="emr"><span>📍</span><span>Rogers Free Library, Bristol, RI</span></div>
+        <div class="emr"><span>🎟️</span><span>Free &amp; Open to the Public</span></div>
+      </div>
+      <p class="ebody">Join our interactive session to get clear answers, essential resources, and the confidence to cast your ballot in time for the 2026 midterm elections.</p>
+      <div class="ebtns">
+        <a href="https://rogersfreelibrary.libcal.com/event/16359856" target="_blank" class="btn btn-r">Register Here</a>
+        <a href="events.html" class="btn btn-gh">All Events →</a>
+      </div>
+    </div>
+    <div class="hls">
+      <div class="hl"><span class="hli">✓</span><div class="hlt">How to register and check your voter eligibility</div></div>
+      <div class="hl"><span class="hli">✓</span><div class="hlt">The various ways to cast your vote in Rhode Island</div></div>
+      <div class="hl"><span class="hli">✓</span><div class="hlt">Proposed changes to state voting laws and what they mean for you</div></div>
+      <div class="hl"><span class="hli">✓</span><div class="hlt">Where to find reliable, nonpartisan election information</div></div>
+      <div class="hl"><span class="hli">✓</span><div class="hlt">Leave with a concrete action plan for the 2026 midterms</div></div>
+    </div>
+  </div>
+</section>
+<section class="inv-sec">
+  <div class="wrap">
+    <div class="sec-hd">
+      <div class="seye">Take Action</div>
+      <h2>It's Up to You</h2>
+      <div class="bar"></div>
+      <p class="sdesc">No matter how you participate, your involvement builds the voice for citizens and a force for change.</p>
+    </div>
+    <div class="g4">
+      <div class="inv"><div class="iico">🏛️</div><div class="ittl">Advocacy</div><p>Help with campaigns, contact legislators, and take action on the issues that matter most to Rhode Island communities.</p></div>
+      <div class="inv"><div class="iico">📋</div><div class="ittl">Serve on a Board</div><p>Bring your skills to local league leadership. Help guide programs, strategy, and community outreach.</p></div>
+      <div class="inv"><div class="iico">📣</div><div class="ittl">Attend Meetings</div><p>Join public forums, candidate debates, and member meetings to stay engaged and inform your community.</p></div>
+      <div class="inv"><div class="iico">💳</div><div class="ittl">Become a Member</div><p>Join a 100-year tradition of civic empowerment. Your membership builds the League's collective voice.</p></div>
+    </div>
+    <div style="text-align:center;margin-top:44px"><a href="donate.html" class="btn btn-g" style="font-size:1.05rem;padding:14px 36px">❤ Make a Donation</a></div>
+  </div>
+</section>
+<div class="dei">
+  <div class="seye" style="color:var(--gold);margin-bottom:12px">Our Commitment</div>
+  <div class="dei-ttl">Diversity, Equity &amp; Inclusion</div>
+  <p class="dei-txt">LWVRI is committed to fostering, cultivating, and preserving a culture of <strong>diversity, equity, inclusion, access, and belonging</strong> for all people. We honor and value the richness of our community — and work to ensure all people feel welcomed, respected, and empowered to participate fully in democracy.<br><br><em>Aligned with the LWVUS DEI Policy adopted January 21, 2024.</em></p>
+</div>
+
+<footer>
+  <div class="fg-grid">
+    <div>
+      <div class="fl">League of Women Voters <b>Rhode Island</b></div>
+      <p class="fd">A nonpartisan, grassroots organization empowering voters and defending democracy across Rhode Island for over 100 years.</p>
+      <p class="fa">One Richmond Square, Suite 220 A-W<br>Providence, RI 02906<br>www.lwvri.org</p>
+    </div>
+    <div class="fc"><h4>Issues</h4><ul>
+      <li><a href="issues.html">Voting Rights</a></li><li><a href="issues.html">Environment</a></li>
+      <li><a href="issues.html">Civics Education</a></li><li><a href="issues.html">Gun Safety</a></li>
+      <li><a href="issues.html">Women's Health</a></li><li><a href="issues.html">View All →</a></li>
+    </ul></div>
+    <div class="fc"><h4>Leagues</h4><ul>
+      <li><a href="leagues.html">LWV Providence</a></li><li><a href="leagues.html">LWV Newport County</a></li>
+      <li><a href="leagues.html">LWV South County</a></li><li><a href="leagues.html">Book Club</a></li>
+      <li><a href="leagues.html">Observer Corps</a></li>
+    </ul></div>
+    <div class="fc"><h4>Organization</h4><ul>
+      <li><a href="about.html">About LWVRI</a></li><li><a href="about.html">Suffrage History</a></li>
+      <li><a href="events.html">Events</a></li><li><a href="contact.html">Contact Us</a></li>
+      <li><a href="donate.html">Donate</a></li>
+      <li><a href="https://my.lwv.org/rhode-island/membership" target="_blank">Join the League</a></li>
+    </ul></div>
+  </div>
+  <div class="fbot">
+    <span>© 2026 League of Women Voters of Rhode Island. All rights reserved.</span>
+    <span><a href="https://www.lwv.org" target="_blank">National LWV</a> · <a href="https://my.lwv.org/rhode-island" target="_blank">Member Portal</a></span>
+  </div>
+</footer>
+<script>
+function toggleMob(){document.getElementById('mob').classList.toggle('open')}
+function closeMob(){document.getElementById('mob').classList.remove('open')}
+document.addEventListener('click',function(e){
+  var m=document.getElementById('mob'),h=document.querySelector('.hamburger');
+  if(m&&h&&!m.contains(e.target)&&!h.contains(e.target))m.classList.remove('open');
+});
+</script>
+</body></html>
